@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vine Tampa | Planeje sua Visita</title>
+    <meta name="description"
+        content="Planeje sua visita à Vine Tampa Church. Saiba horários, localização, o que esperar e como nos preparar para te receber com a sua família.">
+    <!-- Google Fonts for Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS (Reusing the global styles) -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Specific Hub Form Styles */
+        .hub-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .form-control::placeholder {
+            color: var(--text-muted);
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+            text-align: left;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Animated Blobs -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <div class="bg-shape bg-shape-3"></div>
+
+    <!-- Navigation -->
+    <header class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Vine Tampa Logo" class="logo-img">
+            </a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" data-i18n="nav.home">Início</a>
+                <a href="index.html#programacao" data-i18n="nav.schedule">Programação</a>
+                <a href="index.html#valores" data-i18n="nav.values">Valores</a>
+                <a href="index.html#contato" data-i18n="nav.contact">Local & Contato</a>
+
+                <!-- Language Selector -->
+                <div class="lang-selector">
+                    <select id="languageSelect" class="lang-dropdown">
+                        <option value="pt">BR</option>
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hub Hero Section -->
+        <section class="hero fade-in-up" style="min-height: 70vh;">
+            <div class="hero-content glass-card">
+                <span class="badge" data-i18n="hub.hero.badge">Leva menos de 30 segundos</span>
+                <h1 data-i18n="hub.hero.title" data-i18n-html="true">Planeje sua <span class="highlight">visita</span>
+                </h1>
+                <p data-i18n="hub.hero.subtitle">Visitar uma igreja pela primeira vez pode ser intimidante. Na Vine,
+                    queremos que você se sinta acolhido desde o estacionamento. Aqui você encontra uma família te
+                    esperando.</p>
+                <div class="hero-actions">
+                    <a href="#form-section" class="btn btn-primary" data-i18n="hub.hero.btn_plan">Quero planejar minha
+                        visita</a>
+                    <a href="#details-section" class="btn btn-secondary" data-i18n="hub.hero.btn_details">Ver detalhes e
+                        horários</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details Section -->
+        <section id="details-section" class="section">
+            <div class="grid contact-grid">
+                <!-- Location & Time -->
+                <div class="glass-card fade-in-up">
+                    <h2 data-i18n="hub.details.title">Horários & Local</h2>
+
+                    <div class="info-item mt-4">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <div>
+                            <strong data-i18n="hub.details.sunday">Domingos, 10:30 AM</strong>
+                            <p><small data-i18n="hub.details.reception">Recepção e Café: 9:50 AM</small><br>
+                                <small data-i18n="hub.details.kids">Vine Kids: 11:10 AM</small>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-item mt-4">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <div>
+                            <strong data-i18n="hub.details.address">8308 N. Grady Ave, Tampa, FL</strong>
+                            <p><small data-i18n="hub.details.parking">Estacionamento gratuito no local</small></p>
+                            <a href="https://maps.google.com/?q=8308+N.+Grady+Ave,+Tampa,+FL+33614" target="_blank"
+                                class="link-action"><span data-i18n="hub.details.directions">Como chegar</span> <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expectations -->
+                <div class="glass-card fade-in-up" style="transition-delay: 0.2s;">
+                    <h2 data-i18n="hub.expect.title">O que esperar</h2>
+
+                    <ul style="list-style: none; padding: 0; margin-top: 24px;">
+                        <li class="info-item" style="margin-top: 16px;">
+                            <i class="fas fa-music" style="font-size: 1.2rem;"></i>
+                            <div>
+                                <strong data-i18n="hub.expect.item1">Louvor vibrante e mensagem bíblica</strong>
+                            </div>
+                        </li>
+                        <li class="info-item" style="margin-top: 16px;">
+                            <i class="fas fa-hourglass-half" style="font-size: 1.2rem;"></i>
+                            <div>
+                                <strong data-i18n="hub.expect.item2">Duração de aprox. 75 a 90 minutos</strong>
+                            </div>
+                        </li>
+                        <li class="info-item" style="margin-top: 16px;">
+                            <i class="fas fa-tshirt" style="font-size: 1.2rem;"></i>
+                            <div>
+                                <strong data-i18n="hub.expect.item3">Ambiente casual (venha como está)</strong>
+                            </div>
+                        </li>
+                        <li class="info-item" style="margin-top: 16px;">
+                            <i class="fas fa-coffee" style="font-size: 1.2rem;"></i>
+                            <div>
+                                <strong data-i18n="hub.expect.item4">Café gratuito na recepção</strong>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form and FAQ Section -->
+        <section id="form-section" class="section" style="padding-top: 0;">
+            <div class="grid contact-grid">
+
+                <!-- Plan Visit Form -->
+                <div class="glass-card fade-in-up">
+                    <h2 data-i18n="hub.form.title">Avise que você vem!</h2>
+                    <p data-i18n="hub.form.subtitle">Preencha o formulário abaixo e nós prepararemos tudo para sua
+                        chegada. Queremos te receber na porta, te ajudar com o check-in das crianças e garantir que você
+                        tenha uma ótima experiência.</p>
+
+                    <form class="hub-form" onsubmit="event.preventDefault(); alert('Formulário enviado com sucesso!');">
+                        <div class="form-group">
+                            <label for="name" data-i18n="hub.form.nameLabel">Seu Nome</label>
+                            <input type="text" id="name" class="form-control" required placeholder="Ex: João Silva">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-i18n="hub.form.phoneLabel">Telefone (WhatsApp)</label>
+                            <input type="tel" id="phone" class="form-control" required placeholder="(813) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="date" data-i18n="hub.form.dateLabel">Data da Visita</label>
+                            <input type="date" id="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="kids" data-i18n="hub.form.kidsLabel">Terá crianças junto?</label>
+                            <select id="kids" class="form-control">
+                                <option value="nao" data-i18n="hub.form.kidsNo">Não</option>
+                                <option value="sim" data-i18n="hub.form.kidsYes">Sim</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 16px; width: 100%;"
+                            data-i18n="hub.form.submit">Planejar Visita</button>
+                    </form>
+                    <p style="text-align: center; margin-top: 16px; font-size: 0.85rem;"><i class="fas fa-lock"></i>
+                        <span data-i18n="hub.form.secure">Seus dados estão seguros conosco.</span>
+                    </p>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="glass-card fade-in-up" style="transition-delay: 0.2s;">
+                    <h2 data-i18n="hub.faq.title">Perguntas Frequentes</h2>
+                    <div style="margin-top: 32px;">
+                        <div class="faq-item">
+                            <h4 data-i18n="hub.faq.q1">Qual é o código de vestimenta?</h4>
+                            <p data-i18n="hub.faq.a1">Não temos código de vestimenta. A maioria das pessoas veste roupas
+                                casuais. Use o que te faz sentir confortável!</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4 data-i18n="hub.faq.q2">Onde eu devo estacionar?</h4>
+                            <p data-i18n="hub.faq.a2">Temos um estacionamento amplo e gratuito. Ao chegar, nossa equipe
+                                de recepção poderá te orientar se necessário.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4 data-i18n="hub.faq.q3">Meus filhos podem ficar comigo no culto?</h4>
+                            <p data-i18n="hub.faq.a3">Claro! Embora tenhamos o Vine Kids preparado especialmente para
+                                eles, eles são bem-vindos para ficar com você no auditório se preferirem.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer fade-in-up">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="Vine Tampa Logo" class="logo-img">
+                </a>
+                <p data-i18n="footer.slogan">Mais que uma igreja, uma família em Cristo.</p>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/vinetampa/" target="_blank" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/videiratampa" target="_blank" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/c/VideiraTampa" target="_blank" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Vine Tampa Family Community Church.<br>8308 N Grady Ave, Tampa, FL 33614</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>

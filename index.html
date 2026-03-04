@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vine Tampa | Igreja Videira</title>
+    <meta name="description"
+        content="Vine Tampa - Videira Igreja em Células. Mais que uma igreja, uma família em Cristo. Somos uma comunidade acolhedora, vibrante e focada em expressar o amor de Jesus.">
+    <!-- Google Fonts for Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Background Animated Blobs -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <div class="bg-shape bg-shape-3"></div>
+
+    <!-- Navigation -->
+    <header class="glass-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Vine Tampa Logo" class="logo-img">
+            </a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav-links">
+                <a href="#inicio" data-i18n="nav.home">Início</a>
+                <a href="#programacao" data-i18n="nav.schedule">Programação</a>
+                <a href="#valores" data-i18n="nav.values">Valores</a>
+                <a href="#contato" data-i18n="nav.contact">Local & Contato</a>
+                <a href="https://wa.me/18134453303" class="btn btn-primary btn-nav" target="_blank"
+                    data-i18n="nav.cta">Fale Conosco</a>
+
+                <div class="lang-selector">
+                    <select id="languageSelect" class="lang-dropdown">
+                        <option value="pt">BR</option>
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero fade-in-up">
+            <div class="hero-content glass-card">
+                <span class="badge" data-i18n="hero.badge">Bem-vindo à sua casa</span>
+                <h1 data-i18n="hero.title" data-i18n-html="true">Mais que uma igreja,<br>uma <span
+                        class="highlight">família</span> em Cristo.</h1>
+                <p data-i18n="hero.subtitle">Somos uma comunidade acolhedora, vibrante e focada em expressar o amor de
+                    Jesus. Venha nos visitar neste domingo e descubra o seu lugar.</p>
+                <div class="hero-actions">
+                    <a href="hub.html" class="btn btn-primary" data-i18n="hero.cta_plan">Planeje sua Visita</a>
+                    <a href="#programacao" class="btn btn-secondary" data-i18n="hero.cta_schedule">Ver Horários</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programação Section -->
+        <section id="programacao" class="section">
+            <div class="section-header fade-in-up">
+                <h2 data-i18n="schedule.title">Programação Semanal</h2>
+                <p data-i18n="schedule.subtitle">Temos atividades para toda a família durante toda a semana.</p>
+            </div>
+            <div class="grid cards-container">
+                <div class="glass-card hoverable fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="card-icon"><i class="fas fa-church"></i></div>
+                    <h3 data-i18n="schedule.sunday.title">Culto de Celebração</h3>
+                    <p data-i18n="schedule.sunday.desc">Louvor, Palavra e Vine Kids para as crianças.</p>
+                    <span class="schedule-time" data-i18n="schedule.sunday.time">Domingos</span>
+                </div>
+                <div class="glass-card hoverable fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="card-icon"><i class="fas fa-praying-hands"></i></div>
+                    <h3 data-i18n="schedule.tuesday.title">Reunião de Oração</h3>
+                    <p data-i18n="schedule.tuesday.desc">Tempo dedicado à intercessão e busca a Deus.</p>
+                    <span class="schedule-time" data-i18n="schedule.tuesday.time">Terças-feiras</span>
+                </div>
+                <div class="glass-card hoverable fade-in-up" style="transition-delay: 0.3s;">
+                    <div class="card-icon"><i class="fas fa-home"></i></div>
+                    <h3 data-i18n="schedule.cells.title">Células</h3>
+                    <p data-i18n="schedule.cells.desc">Comunhão, palavra e relacionamento íntimo nos lares.</p>
+                    <span class="schedule-time" data-i18n="schedule.cells.time">Durante a semana</span>
+                </div>
+                <div class="glass-card hoverable fade-in-up" style="transition-delay: 0.4s;">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3 data-i18n="schedule.youth.title">Jovens (Vine Youth)</h3>
+                    <p data-i18n="schedule.youth.desc">Encontros vibrantes quinzenais para a juventude.</p>
+                    <span class="schedule-time" data-i18n="schedule.youth.time">Sábados</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valores Section -->
+        <section id="valores" class="section">
+            <div class="section-header fade-in-up">
+                <h2 data-i18n="values.title">Nossos Valores</h2>
+                <p data-i18n="values.subtitle">Somos guiados pela Palavra e pelo fluir do Espírito Santo.</p>
+            </div>
+            <div class="grid grid-3 cards-container">
+                <div class="glass-card hoverable fade-in-up">
+                    <div class="card-image bg-grace"></div>
+                    <div class="card-content">
+                        <h3 data-i18n="values.grace.title">Graça Abundante</h3>
+                        <p data-i18n="values.grace.desc">Cremos que a salvação é um presente gratuito de Deus, recebido
+                            pela fé em Jesus, não por obras.</p>
+                    </div>
+                </div>
+                <div class="glass-card hoverable fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="card-image bg-spirit"></div>
+                    <div class="card-content">
+                        <h3 data-i18n="values.spirit.title">Espírito Santo</h3>
+                        <p data-i18n="values.spirit.desc">Buscamos ser guiados diariamente pelo Espírito Santo, vivendo
+                            em santidade e poder.</p>
+                    </div>
+                </div>
+                <div class="glass-card hoverable fade-in-up" style="transition-delay: 0.4s;">
+                    <div class="card-image bg-discipleship"></div>
+                    <div class="card-content">
+                        <h3 data-i18n="values.discipleship.title">Discipulado</h3>
+                        <p data-i18n="values.discipleship.desc">Investimos em relacionamentos reais e no crescimento
+                            espiritual de cada membro e das crianças.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Contact Section -->
+        <section id="contato" class="section">
+            <div class="contact-grid">
+                <div class="glass-card contact-info fade-in-up">
+                    <h2 data-i18n="contact.title">Você é bem-vindo aqui!</h2>
+                    <p data-i18n="contact.subtitle">Se você tem dúvidas, precisa de oração ou quer apenas saber mais
+                        sobre a igreja, nossa equipe está pronta para falar com você.</p>
+
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <div>
+                            <strong data-i18n="contact.location">Onde Estamos</strong>
+                            <p>8308 N Grady Ave, Tampa, FL 33614<br><small data-i18n="contact.parking">Estacionamento
+                                    amplo e gratuito no local.</small></p>
+                            <a href="https://www.google.com/maps?q=8308+N+Grady+Ave,+Tampa,+FL+33614" target="_blank"
+                                class="link-action"><span data-i18n="contact.maps">Abrir no Google Maps</span> <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="info-item mt-4">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <div>
+                            <strong data-i18n="contact.whatsapp">Fale no WhatsApp</strong>
+                            <p>(813) 445-3303</p>
+                            <a href="https://wa.me/18134453303" target="_blank" class="btn btn-primary btn-sm mt-2"
+                                data-i18n="contact.btn">Enviar Mensagem</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card map-container fade-in-up" style="transition-delay: 0.2s;">
+                    <!-- Embed Google Maps with updated styling -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3522.6186806509424!2d-82.50853548540828!3d28.02534578266205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c431d1024af3%3A0xeab5e8557bd246c0!2s8308%20N%20Grady%20Ave%2C%20Tampa%2C%20FL%2033614!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Google Maps Vine Tampa"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer fade-in-up">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <img src="logo.png" alt="Vine Tampa Logo" class="logo-img">
+                </a>
+                <p data-i18n="footer.slogan">Mais que uma igreja, uma família em Cristo.</p>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/vinetampa/" target="_blank" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/videiratampa" target="_blank" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/c/VideiraTampa" target="_blank" aria-label="YouTube"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Vine Tampa Family Community Church.<br>8308 N Grady Ave, Tampa, FL 33614</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
