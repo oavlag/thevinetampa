@@ -15,14 +15,11 @@
       --text:#ffffff;
       --muted:rgba(255,255,255,.72);
       --line:rgba(255,255,255,.16);
-      --glass:rgba(255,255,255,.08);
-      --tile:rgba(255,255,255,.10);
-      --tileHover:rgba(255,255,255,.16);
       --gold:#f5b84b;
       --max:820px;
     }
 
-    *{box-sizing:border-box;}
+    *{ box-sizing:border-box; }
 
     body{
       margin:0;
@@ -53,8 +50,8 @@
     }
 
     @keyframes lightMove{
-      from{transform:translate(-3%,-2%) scale(1);}
-      to{transform:translate(4%,5%) scale(1.08);}
+      from{ transform:translate(-3%,-2%) scale(1); }
+      to{ transform:translate(4%,5%) scale(1.08); }
     }
 
     .particles{
@@ -87,10 +84,10 @@
     .particles span:nth-child(8){left:92%;animation-duration:23s;animation-delay:2s;}
 
     @keyframes floatUp{
-      0%{transform:translateY(0) translateX(0) scale(.7);opacity:0;}
-      15%{opacity:.6;}
-      50%{transform:translateY(-50vh) translateX(28px) scale(1);}
-      100%{transform:translateY(-110vh) translateX(-22px) scale(.8);opacity:0;}
+      0%{ transform:translateY(0) translateX(0) scale(.7); opacity:0; }
+      15%{ opacity:.6; }
+      50%{ transform:translateY(-50vh) translateX(28px) scale(1); }
+      100%{ transform:translateY(-110vh) translateX(-22px) scale(.8); opacity:0; }
     }
 
     a{
@@ -107,13 +104,12 @@
     }
 
     .hero{
-      border-radius:34px;
+      position:relative;
       overflow:hidden;
+      border-radius:34px;
       border:1px solid var(--line);
-      background:var(--glass);
       box-shadow:0 24px 70px rgba(0,0,0,.48);
-      backdrop-filter:blur(28px) saturate(1.4);
-      -webkit-backdrop-filter:blur(28px) saturate(1.4);
+      background:#000;
     }
 
     .hero img{
@@ -122,95 +118,105 @@
       height:auto;
     }
 
-    .giving-card{
-      margin-top:18px;
-      padding:24px;
-      border-radius:30px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.08);
-      backdrop-filter:blur(34px) saturate(1.5);
-      -webkit-backdrop-filter:blur(34px) saturate(1.5);
-      box-shadow:0 18px 55px rgba(0,0,0,.40);
-      text-align:center;
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,.04),
+          rgba(0,0,0,.02) 35%,
+          rgba(0,0,0,.18) 100%
+        );
+      pointer-events:none;
+      z-index:2;
     }
 
-    .eyebrow{
-      color:var(--gold);
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      font-size:12px;
-      font-weight:800;
-      margin-bottom:8px;
-    }
-
-    h1{
-      margin:0;
-      font-size:30px;
-      line-height:1.08;
-      letter-spacing:-.04em;
-    }
-
-    .subtitle{
-      margin:12px auto 22px;
+    .floating-giving{
+      position:absolute;
+      left:50%;
+      top:51%;
+      transform:translateX(-50%);
+      width:100%;
       max-width:560px;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.55;
-    }
-
-    .grid{
+      padding:0 24px;
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+      grid-template-columns:1fr 1fr;
       gap:16px;
+      z-index:5;
     }
 
-    .tile{
-      padding:22px 16px;
-      border-radius:24px;
-      border:1px solid rgba(255,255,255,.16);
-      background:var(--tile);
+    .give-btn{
+      position:relative;
       display:flex;
-      flex-direction:column;
       align-items:center;
-      justify-content:center;
-      gap:12px;
-      transition:.2s ease;
-      min-height:150px;
+      gap:14px;
+      padding:18px;
+      border-radius:24px;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.20);
+      backdrop-filter:blur(28px) saturate(1.6);
+      -webkit-backdrop-filter:blur(28px) saturate(1.6);
+      box-shadow:
+        0 18px 40px rgba(0,0,0,.34),
+        inset 0 1px 0 rgba(255,255,255,.20);
+      transition:.22s ease;
+      overflow:hidden;
     }
 
-    .tile:hover{
-      transform:translateY(-3px);
-      background:var(--tileHover);
+    .give-btn::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(255,255,255,.16), transparent 55%);
+      pointer-events:none;
     }
 
-    .icon{
-      width:68px;
-      height:68px;
-      border-radius:22px;
+    .give-btn:hover{
+      transform:translateY(-4px) scale(1.02);
+      background:rgba(255,255,255,.20);
+    }
+
+    .give-icon{
+      width:58px;
+      height:58px;
+      border-radius:18px;
       display:grid;
       place-items:center;
-      font-size:32px;
+      font-size:28px;
+      flex-shrink:0;
       box-shadow:
-        0 16px 24px rgba(0,0,0,.30),
-        inset 0 1px 0 rgba(255,255,255,.25);
+        inset 0 1px 0 rgba(255,255,255,.22),
+        0 10px 20px rgba(0,0,0,.28);
+      position:relative;
+      z-index:1;
     }
 
-    .zelle{
+    .zelle .give-icon{
       background:linear-gradient(135deg,#8b5cf6,#6d28d9);
     }
 
-    .cardpay{
+    .cardpay .give-icon{
       background:linear-gradient(135deg,#f59e0b,#b45309);
     }
 
-    .tile strong{
-      font-size:17px;
-      font-weight:800;
+    .give-text{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      position:relative;
+      z-index:1;
     }
 
-    .tile span{
+    .give-text strong{
+      font-size:18px;
+      font-weight:800;
+      color:white;
+    }
+
+    .give-text span{
       font-size:13px;
-      color:var(--muted);
+      color:rgba(255,255,255,.84);
       line-height:1.35;
     }
 
@@ -230,17 +236,41 @@
         border-radius:26px;
       }
 
-      .giving-card{
-        padding:20px 16px;
-        border-radius:26px;
-      }
-
-      h1{
-        font-size:26px;
-      }
-
-      .grid{
+      .floating-giving{
+        top:47%;
         grid-template-columns:1fr;
+        max-width:350px;
+        gap:12px;
+      }
+
+      .give-btn{
+        padding:15px;
+        border-radius:22px;
+      }
+
+      .give-icon{
+        width:52px;
+        height:52px;
+        font-size:25px;
+      }
+
+      .give-text strong{
+        font-size:17px;
+      }
+
+      .give-text span{
+        font-size:12px;
+      }
+    }
+
+    @media(max-width:420px){
+      .floating-giving{
+        top:46%;
+        max-width:320px;
+      }
+
+      .give-btn{
+        padding:13px;
       }
     }
 
@@ -263,40 +293,38 @@
   <main class="page">
 
     <section class="hero">
+
       <img src="https://www.thevinetampa.com/miss.png" alt="World Missions Offering - June 14, 2026">
-    </section>
 
-    <section class="giving-card">
+      <div class="hero-overlay"></div>
 
-      <div class="eyebrow">World Missions Offering</div>
+      <div class="floating-giving">
 
-      <h1>Dia Mundial de Missões</h1>
-
-      <div class="subtitle">
-        Sua oferta salva vidas e alcança nações. Participe desse mover de generosidade e expansão do Reino.
-      </div>
-
-      <div class="grid">
-
-        <a class="tile"
+        <a class="give-btn zelle"
            href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiVEhFIFZJTkUgVEFNUEEgRkFNSUxZIENPTU1VTklUWSBDSFVSQ0giLCJ0b2tlbiI6InplbGxlQHRoZXZpbmV0YW1wYS5jb20iLCJhY3Rpb24iOiJwYXltZW50In0="
            target="_blank"
            rel="noopener noreferrer">
 
-          <div class="icon zelle">💸</div>
-          <strong>Zelle</strong>
-          <span>zelle@thevinetampa.com</span>
+          <div class="give-icon">💸</div>
+
+          <div class="give-text">
+            <strong>Zelle</strong>
+            <span>zelle@thevinetampa.com</span>
+          </div>
 
         </a>
 
-        <a class="tile"
+        <a class="give-btn cardpay"
            href="https://square.link/u/ODwZXzmV"
            target="_blank"
            rel="noopener noreferrer">
 
-          <div class="icon cardpay">💳</div>
-          <strong>Card</strong>
-          <span>Faça sua doação com cartão</span>
+          <div class="give-icon">💳</div>
+
+          <div class="give-text">
+            <strong>Card</strong>
+            <span>Donate with card</span>
+          </div>
 
         </a>
 
