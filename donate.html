@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doações • Vine Tampa Church</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --text:rgba(255,255,255,.94);
+      --muted:rgba(255,255,255,.58);
+
+      --line:rgba(255,255,255,.14);
+      --glass:rgba(255,255,255,.06);
+
+      --tile: rgba(255,255,255,.09);
+      --tileHover: rgba(255,255,255,.13);
+
+      --shadow: 0 18px 55px rgba(0,0,0,.48);
+
+      --radiusWrap: 30px;
+      --radiusCard: 24px;
+      --radiusTile: 24px;
+
+      --max: 760px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      padding:20px;
+      background:
+        radial-gradient(1050px 620px at 18% 6%, rgba(110,231,255,.22), transparent 55%),
+        radial-gradient(820px 520px at 82% 14%, rgba(155,140,255,.20), transparent 55%),
+        radial-gradient(860px 520px at 50% 98%, rgba(45,212,191,.16), transparent 55%),
+        var(--bg);
+
+      color:var(--text);
+      font-family:Inter, system-ui, sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .wrapper{
+      width:100%;
+      max-width:var(--max);
+    }
+
+    .card{
+      position:relative;
+      overflow:hidden;
+
+      border-radius:var(--radiusWrap);
+      padding:28px;
+
+      border:1px solid var(--line);
+
+      background:var(--glass);
+
+      backdrop-filter: blur(46px) saturate(1.55);
+      -webkit-backdrop-filter: blur(46px) saturate(1.55);
+
+      box-shadow:var(--shadow);
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-30% -10% auto -10%;
+      height:60%;
+      background: radial-gradient(circle at 25% 30%, rgba(255,255,255,.15), transparent 55%);
+      transform: rotate(-6deg);
+      pointer-events:none;
+    }
+
+    .top{
+      text-align:center;
+      margin-bottom:28px;
+      position:relative;
+      z-index:1;
+    }
+
+    .logo{
+      width:74px;
+      height:74px;
+      margin:0 auto 18px;
+
+      border-radius:22px;
+      padding:14px;
+
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+
+    h1{
+      margin:0;
+      font-size:32px;
+      font-weight:700;
+      letter-spacing:-0.02em;
+    }
+
+    .subtitle{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.5;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      position:relative;
+      z-index:1;
+    }
+
+    .tile{
+      position:relative;
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+
+      padding:24px 18px;
+
+      border-radius:var(--radiusTile);
+
+      background:var(--tile);
+
+      border:1px solid rgba(255,255,255,.16);
+
+      backdrop-filter: blur(52px) saturate(1.8);
+
+      transition:.2s ease;
+
+      text-align:center;
+
+      overflow:hidden;
+    }
+
+    .tile:hover{
+      transform:translateY(-3px);
+      background:var(--tileHover);
+    }
+
+    .icon{
+      width:72px;
+      height:72px;
+
+      border-radius:22px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      font-size:34px;
+
+      box-shadow:
+        0 16px 24px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.22);
+    }
+
+    .zelle{
+      background:linear-gradient(135deg,#8b5cf6,#7c3aed);
+    }
+
+    .cardpay{
+      background:linear-gradient(135deg,#3b82f6,#2563eb);
+    }
+
+    .roof{
+      background:linear-gradient(135deg,#f59e0b,#d97706);
+    }
+
+    .missions{
+      background:linear-gradient(135deg,#10b981,#059669);
+    }
+
+    .tile strong{
+      font-size:16px;
+    }
+
+    .tile span{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .footer{
+      margin-top:24px;
+      text-align:center;
+      color:rgba(255,255,255,.45);
+      font-size:12px;
+      position:relative;
+      z-index:1;
+    }
+
+    @media(max-width:640px){
+
+      body{
+        padding:14px;
+      }
+
+      .card{
+        padding:22px 18px;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:28px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div class="card">
+
+      <div class="top">
+
+        <div class="logo">
+          <img src="https://thevinetampa.com/wp-content/uploads/2022/04/vine-logo.png" alt="Vine Tampa Church">
+        </div>
+
+        <h1>Doações</h1>
+
+        <div class="subtitle">
+          Sua generosidade nos ajuda a expandir o Reino e alcançar vidas.
+        </div>
+
+      </div>
+
+      <div class="grid">
+
+        <a class="tile"
+           href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiVEhFIFZJTkUgVEFNUEEgRkFNSUxZIENPTU1VTklUWSBDSFVSQ0giLCJ0b2tlbiI6InplbGxlQHRoZXZpbmV0YW1wYS5jb20iLCJhY3Rpb24iOiJwYXltZW50In0="
+           target="_blank">
+
+          <div class="icon zelle">💸</div>
+
+          <strong>Zelle</strong>
+          <span>Doação rápida</span>
+
+        </a>
+
+        <a class="tile"
+           href="https://square.link/u/ODwZXzmV"
+           target="_blank">
+
+          <div class="icon cardpay">💳</div>
+
+          <strong>Card</strong>
+          <span>Square</span>
+
+        </a>
+
+        <a class="tile"
+           href="https://square.link/u/XjKMXmUn"
+           target="_blank">
+
+          <div class="icon roof">⛪</div>
+
+          <strong>Roof</strong>
+          <span>Campanha</span>
+
+        </a>
+
+        <a class="tile"
+           href="https://square.link/u/YcXFKBma"
+           target="_blank">
+
+          <div class="icon missions">🌍</div>
+
+          <strong>Missions</strong>
+          <span>Alcance</span>
+
+        </a>
+
+      </div>
+
+      <div class="footer">
+        © 2026 The Vine Tampa Family Community Church
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
